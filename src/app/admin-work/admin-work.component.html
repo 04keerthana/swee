@@ -1,0 +1,109 @@
+<div>
+    <form (ngSubmit)="doFormSubmit()" #PlanterForm="ngForm"></form>
+   </div>
+   <table style="background-color: rgb(244,221,226); border:solid 2px;">
+    <tr>
+        <td style="width: 20%; background-color: rgb(244,221,226);">
+            <table>
+                <div class="form-group">
+                    <label>Enter Planter Id</label>
+                    <input type="text" [(ngModel)]="p.planterId" class="form-control" id="pid" name="pid"
+                    #planterId="ngModel" placeholder="Enter Planter Id" required pattern="[0-9][0-9][0-9]">
+                    <div *ngIf="planterId.invalid">
+                        <span style="color: red;" *ngIf="planterId.errors?.['required']">
+                            Planter Id is required 
+                        </span>
+                    </div>
+            </div>
+<br>
+<div class="form-group">
+    <label>Planter Name</label>
+    <input type="text" [(ngModel)]="p.planterName" class="form-control" id="pname" name="pname"
+        #planterName="ngModel" placeholder="Enter Planter Name" required pattern="[0-9][0-9][0-9]">
+        <div *ngIf="planterName.invalid">
+            <span style="color: red;" *ngIf="planterName.errors?.['required']">
+                Planter Name is required 
+            </span>
+        </div>
+</div>
+
+
+    <tr>
+        <td> Height </td>
+        <td> <input type="text" #height/> </td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <td> 
+            <select #category>
+                <option> Plant </option>
+                <option> Seed </option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Types Of Planters</td>
+        <td> 
+            <select #typesOfPlanters>
+                <option> Ceramic Planter </option>
+                <option> Wooden Planter </option>
+                <option> Metal Planter </option>
+                <option> Glass Planter </option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Bloom Season</td>
+        <td> 
+            <select #bloomSeason>
+                <option> Summer </option>
+                <option> Winter </option>
+                <option> Spring </option>
+                
+            </select>
+        </td>
+            <div class="form-group">
+       <label>Price </label>
+       <input type="text" [(ngModel)]="p.price" class="form-control" id="pprice" name="pprice"
+           #price="ngModel" placeholder="Enter the price" required pattern="[0-9][0-9][0-9]">
+           <div *ngIf="price.invalid">
+               <span style="color: red;" *ngIf="price.errors?.['required']">
+                   Enter the Price
+               </span>
+           </div>
+   </div>
+
+    <tr>
+        <td> Discount </td>
+        <td> <input type="text" #discount/> </td>
+    </tr>
+
+    <tr>
+        <td> Image Name </td>
+        <td> <input type="text" #image/> </td>
+    </tr>
+        <tr>
+            <td> Star Rating </td>
+            <td> <input type="text" #starRating/> </td>
+        </tr>
+        <tr>
+            <td>About </td>
+            <td> <input type="text" #about/> </td>
+        </tr>
+        <tr>
+        <td> <input type="reset" vaule="Clear All"></td>
+        <td> <input type="button" 
+            (click)="readPlanter(planterId.value,planterName.value,height.value,category.value,typesOfPlanters.value,bloomSeason.value,price.value,discount.value,about.value,image.value,starRating.value)"
+            value="Add Planter" /> </td>
+        </tr>
+    </table>
+    <br/>
+
+    <td style="width: 80%;">
+        
+    
+    </td>
+
+
+
+

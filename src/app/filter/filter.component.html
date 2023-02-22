@@ -1,0 +1,53 @@
+<div >
+    <table>
+        <tr>
+            <td>
+                <div class="Watchlist">
+                    Watchlist <br/>
+                    {{watchlistCount}}
+                </div>    
+            </td>
+            <td>
+                Filter Planter 
+                Category
+                
+                    <select #category (change)="getFilterData(category.value)">
+                        <option> Plant </option>
+                        <option> Seed </option>
+                    </select>
+                   
+            
+            </td>
+            <td>
+                Filter Planter 
+                Season
+                
+                    <select #bloomSeason (change)="getFilterData1(bloomSeason.value)">
+                        <option> Summer </option>
+                        <option> Winter </option>
+                        <option> Spring </option>
+                    </select>
+                   
+            
+            </td>
+            <td>
+                Filter Planter 
+                StarRating
+                
+                    <select #starRating (change)="getFilterData2(starRating.value)">
+                        <option> 2 </option>
+                        <option> 3 </option>
+                        <option> 4 </option>
+                        <option> 5 </option>
+                    </select>
+                   
+            
+            </td>
+            
+        </tr>
+    </table>
+   
+
+
+</div>
+
